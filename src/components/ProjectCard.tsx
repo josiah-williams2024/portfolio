@@ -2,9 +2,10 @@ import type { Project } from '../types/Project.ts';
 
 type ProjectCardProps = {
     project: Project;
+    onOpen: (project: Project) => void;
 };
 
-export default function ProjectCard({ project }: ProjectCardProps) {
+export default function ProjectCard({ project, onOpen }: ProjectCardProps) {
     return (
         <article className="project-card">
             <div className="project-card-top">
@@ -21,6 +22,15 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                     <li key={technology}>{technology}</li>
                 ))}
             </ul>
+
+            <button
+                className="project-button"
+                type="button"
+                onClick={() => onOpen(project)}
+                aria-label={`View details for ${project.name}`}
+            >
+                View project ↗
+            </button>
         </article>
     );
 }
