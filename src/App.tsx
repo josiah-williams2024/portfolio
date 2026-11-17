@@ -1,63 +1,19 @@
 import {useState} from "react";
 import './App.css';
+import type {Page} from "./types/Page.ts";
+import Sidebar from './components/Sidebar';
+import Projects from './pages/Projects';
 
-type Page = "overview" | "projects" | "experience" | "about" | "contact";
 
 
 function App() {
   const [activePage, setActivePage] = useState<Page>("overview");
   return (
       <div className="workspace">
-        <aside className="sidebar">
-          <a className="brand" href="/">
-            JW<span>.</span>
-          </a>
-
-          <p className="sidebar-label">Workspace</p>
-
-          <nav aria-label="Main navigation">
-            <button
-                type="button"
-                onClick={() => setActivePage('overview')}
-                aria-current={activePage === 'overview' ? 'page' : undefined}
-            >
-              Overview
-            </button>
-
-            <button
-                type="button"
-                onClick={() => setActivePage('projects')}
-                aria-current={activePage === 'projects' ? 'page' : undefined}
-            >
-              Projects
-            </button>
-
-            <button
-                type="button"
-                onClick={() => setActivePage('experience')}
-                aria-current={activePage === 'experience' ? 'page' : undefined}
-            >
-              Experience
-            </button>
-
-            <button
-                type="button"
-                onClick={() => setActivePage('about')}
-                aria-current={activePage === 'about' ? 'page' : undefined}
-            >
-              About
-            </button>
-
-            <button
-                type="button"
-                onClick={() => setActivePage('contact')}
-                aria-current={activePage === 'contact' ? 'page' : undefined}
-            >
-              Contact
-            </button>
-          </nav>
-        </aside>
-
+        <Sidebar
+            activePage={activePage}
+            onPageChange={setActivePage}
+        />
         <div className="workspace-body">
           <header className="tab-bar">
             <span className="active-tab">{activePage}.tsx</span>
@@ -81,15 +37,7 @@ function App() {
                 </>
             )}
 
-            {activePage === 'projects' && (
-                <>
-                  <p className="eyebrow">Selected work</p>
-                  <h1>My projects.</h1>
-                  <p className="intro">
-                    Explore CodeSmellTrainer, SpendTempo, and what I’m building next.
-                  </p>
-                </>
-            )}
+            {activePage === 'projects' && <Projects />}
 
             {activePage === 'experience' && (
                 <>
