@@ -6,6 +6,7 @@ import { projects } from './data/projects.ts';
 import Overview from './pages/Overview.tsx';
 import Experience from './pages/Experience.tsx';
 import About from './pages/About.tsx';
+import Contact from './pages/Contact.tsx';
 
 const pageTabNames: Record<string, string> = {
   '/': 'overview',
@@ -52,18 +53,7 @@ function App() {
 
             <Route path="/about" element={<About />} />
 
-            <Route
-              path="/contact"
-              element={
-                <>
-                  <p className="eyebrow">Let’s connect</p>
-                  <h1>Get in touch.</h1>
-                  <p className="intro">
-                    Find me on GitHub and LinkedIn, or send me an email.
-                  </p>
-                </>
-              }
-            />
+            <Route path="/contact" element={<Contact />} />
 
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>

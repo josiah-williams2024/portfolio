@@ -506,6 +506,45 @@ h1 {
   font-size: clamp(28px, 4vw, 42px);
 }
 
+.contact-page {
+  display: grid;
+  gap: clamp(48px, 8vw, 80px);
+  max-width: 1000px;
+}
+
+.contact-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.contact-card {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 24px;
+  border: 1px solid #364032;
+  border-radius: 12px;
+  background: #1b1e1c;
+  color: #eeeae2;
+  text-decoration: none;
+}
+
+.contact-card:hover {
+  border-color: #b8ef72;
+  background: #293028;
+}
+
+.contact-label {
+  color: #b8ef72;
+  font-family: monospace;
+}
+
+.contact-value {
+  overflow-wrap: anywhere;
+  color: #aab3a7;
+}
+
 @media (max-width: 700px) {
   .workspace {
     grid-template-columns: 1fr;
@@ -539,5 +578,13 @@ h1 {
 
   .experience-meta {
     flex-direction: column;
+  }
+
+  .contact-card {
+    grid-template-columns: 1fr auto;
+  }
+
+  .contact-label {
+    grid-column: 1 / -1;
   }
 }
