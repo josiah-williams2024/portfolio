@@ -2,12 +2,32 @@ import './App.css';
 import Projects from './pages/Projects';
 import { Navigate, Route, Routes, useLocation } from 'react-router';
 import Sidebar from './components/Sidebar.tsx';
+import { projects } from './data/projects.ts';
+
+const pageTabNames: Record<string, string> = {
+  '/': 'overview',
+  '/projects': 'projects',
+  '/experience': 'experience',
+  '/about': 'about',
+  '/contact': 'contact',
+};
+
+function getTabName(pathname: string) {
+  const pageName = pageTabNames[pathname];
+
+  if (pageName) {
+    return pageName;
+  }
+
+  const projectId = pathname.match(/^\/projects\/([^/]+)$/)?.[1];
+  const project = projects.find((item) => item.id === projectId);
+
+  return project?.name ?? 'overview';
+}
 
 function App() {
   const location = useLocation();
-  const tabName = location.pathname === '/'
-    ? 'overview'
-    : location.pathname.split('/').filter(Boolean).at(-1) ?? 'overview';
+  const tabName = getTabName(location.pathname);
 
   return (
     <div className="workspace">
