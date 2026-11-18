@@ -4,6 +4,7 @@ import { Navigate, Route, Routes, useLocation } from 'react-router';
 import Sidebar from './components/Sidebar.tsx';
 import { projects } from './data/projects.ts';
 import Overview from './pages/Overview.tsx';
+import Experience from './pages/Experience.tsx';
 
 const pageTabNames: Record<string, string> = {
   '/': 'overview',
@@ -46,18 +47,7 @@ function App() {
             <Route path="/projects" element={<Projects />} />
             <Route path="/projects/:projectId" element={<Projects />} />
 
-            <Route
-              path="/experience"
-              element={
-                <>
-                  <p className="eyebrow">Learning through building</p>
-                  <h1>My experience.</h1>
-                  <p className="intro">
-                    My work and growth as a Software Developer Co-op at Vehikl.
-                  </p>
-                </>
-              }
-            />
+            <Route path="/experience" element={<Experience />} />
 
             <Route
               path="/about"

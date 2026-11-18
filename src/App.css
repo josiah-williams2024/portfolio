@@ -390,6 +390,62 @@ h1 {
   margin-top: 28px;
 }
 
+.experience-page {
+  display: grid;
+  gap: 48px;
+  max-width: 900px;
+}
+
+.experience-entry {
+  padding: clamp(24px, 5vw, 48px);
+  border: 1px solid #364032;
+  border-radius: 16px;
+  background: #1b1e1c;
+}
+
+.experience-meta {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 24px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid #364032;
+}
+
+.experience-company {
+  margin: 0;
+  color: #b8ef72;
+  font-family: monospace;
+}
+
+.experience-meta h2 {
+  margin: 10px 0 0;
+  font-size: clamp(24px, 4vw, 36px);
+}
+
+.experience-period {
+  margin: 0;
+  color: #aab3a7;
+  font-family: monospace;
+}
+
+.experience-entry section {
+  margin-top: 32px;
+}
+
+.experience-entry h3 {
+  color: #eeeae2;
+  font-size: 16px;
+}
+
+.experience-list {
+  display: grid;
+  gap: 12px;
+  padding-left: 20px;
+  color: #aab3a7;
+  line-height: 1.7;
+}
+
 @media (max-width: 700px) {
   .workspace {
     grid-template-columns: 1fr;
@@ -418,6 +474,10 @@ h1 {
 
   .section-heading {
     align-items: start;
+    flex-direction: column;
+  }
+
+  .experience-meta {
     flex-direction: column;
   }
 }
