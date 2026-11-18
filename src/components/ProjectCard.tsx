@@ -1,11 +1,11 @@
 import type { Project } from '../types/Project.ts';
+import {Link} from 'react-router'
 
 type ProjectCardProps = {
     project: Project;
-    onOpen: (project: Project) => void;
 };
 
-export default function ProjectCard({ project, onOpen }: ProjectCardProps) {
+export default function ProjectCard({ project }: ProjectCardProps) {
     return (
         <article className="project-card">
             <div className="project-card-top">
@@ -23,14 +23,13 @@ export default function ProjectCard({ project, onOpen }: ProjectCardProps) {
                 ))}
             </ul>
 
-            <button
+            <Link
                 className="project-button"
-                type="button"
-                onClick={() => onOpen(project)}
+                to={`/projects/${project.id}`}
                 aria-label={`View details for ${project.name}`}
             >
                 View project ↗
-            </button>
+            </Link>
         </article>
     );
 }

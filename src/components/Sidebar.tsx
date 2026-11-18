@@ -1,37 +1,31 @@
-import type {Page} from '../types/Page.ts';
+import { NavLink } from 'react-router';
 
-type SidebarProps = {
-    activePage: Page;
-    onPageChange: (page: Page) => void;
-};
-
-const navigationItems: { id: Page; label: string }[] = [
-    {id: 'overview', label: 'Overview'},
-    {id: 'projects', label: 'Project'},
-    {id: 'experience', label: 'Experience'},
-    {id: 'about', label: 'About'},
-    {id: 'contact', label: 'Contact'},
+const navigationItems = [
+    { path: '/', label: 'Overview' },
+    { path: '/projects', label: 'Projects' },
+    { path: '/experience', label: 'Experience' },
+    { path: '/about', label: 'About' },
+    { path: '/contact', label: 'Contact' },
 ];
 
-export default function Sidebar({ activePage, onPageChange, }: SidebarProps) {
+export default function Sidebar() {
     return (
         <aside className="sidebar">
-            <a className="brand" href="/">
+            <NavLink className="brand" to="/">
                 JW<span>.</span>
-            </a>
+            </NavLink>
 
             <p className="sidebar-label">Workspace</p>
 
             <nav aria-label="Main navigation">
                 {navigationItems.map((item) => (
-                    <button
-                        key={item.id}
-                        type="button"
-                        onClick={() => onPageChange(item.id)}
-                        aria-current={activePage === item.id ? 'page' : undefined}
+                    <NavLink
+                        key={item.path}
+                        to={item.path}
+                        end={item.path === '/'}
                     >
                         {item.label}
-                    </button>
+                    </NavLink>
                 ))}
             </nav>
         </aside>

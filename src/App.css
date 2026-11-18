@@ -34,17 +34,21 @@
   gap: 8px;
 }
 
-.sidebar button {
+.sidebar nav a {
+  display: block;
   padding: 12px;
-  border: 0;
   border-radius: 8px;
-  background: transparent;
   color: #c3cbc0;
   text-align: left;
-  cursor: pointer;
+  text-decoration: none;
 }
 
-.sidebar button:hover {
+.sidebar nav a:hover {
+  background: #293028;
+  color: #b8ef72;
+}
+
+.sidebar nav a[aria-current='page'] {
   background: #293028;
   color: #b8ef72;
 }
@@ -107,58 +111,29 @@ h1 {
   font-size: 12px;
 }
 
-@media (max-width: 700px) {
-  .workspace {
-    grid-template-columns: 1fr;
-  }
-
-  .sidebar {
-    padding: 16px;
-    border-right: 0;
-    border-bottom: 1px solid #303630;
-  }
-
-  .sidebar-label {
-    display: none;
-  }
-
-  .sidebar nav {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 16px;
-    gap: 4px;
-  }
-
-  .sidebar button {
-    padding: 8px;
-  }
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(100%, 280px), 1fr)
+  );
+  gap: 20px;
+  margin-top: 40px;
 }
 
-  .sidebar button[aria-current='page'] {
-    background: #293028;
-    color: #b8ef72;
-  }
+.project-card {
+  padding: 28px;
+  border: 1px solid #364032;
+  border-radius: 16px;
+  background: #1b1e1c;
+}
 
-  .project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
-    gap: 20px;
-    margin-top: 40px;
-  }
-
-  .project-card {
-    padding: 28px;
-    border: 1px solid #364032;
-    border-radius: 16px;
-    background: #1b1e1c;
-  }
-
-  .project-card-top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-  }
+.project-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
 
 .project-label {
   color: #b8ef72;
@@ -168,46 +143,47 @@ h1 {
   text-transform: uppercase;
 }
 
-  .project-status {
-    padding: 6px 10px;
-    border: 1px solid #364032;
-    border-radius: 999px;
-    color: #b8c3b2;
-    font-size: 11px;
-  }
+.project-status {
+  padding: 6px 10px;
+  border: 1px solid #364032;
+  border-radius: 999px;
+  color: #b8c3b2;
+  font-size: 11px;
+}
 
-  .project-card h2 {
-    margin: 28px 0 12px;
-    font-size: 22px;
-    letter-spacing: -0.03em;
-  }
+.project-card h2 {
+  margin: 28px 0 12px;
+  font-size: 22px;
+  letter-spacing: -0.03em;
+}
 
-  .project-description {
-    margin: 0;
-    color: #aab3a7;
-    line-height: 1.7;
-  }
+.project-description {
+  margin: 0;
+  color: #aab3a7;
+  line-height: 1.7;
+}
 
-  .project-technologies {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin: 24px 0 0;
-    padding: 0;
-    list-style: none;
-  }
+.project-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+}
 
-  .project-technologies li {
-    padding: 6px 10px;
-    border-radius: 6px;
-    background: #293028;
-    color: #b8ef72;
-    font-family: monospace;
-    font-size: 12px;
-  }
+.project-technologies li {
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: #293028;
+  color: #b8ef72;
+  font-family: monospace;
+  font-size: 12px;
+}
 
 .project-button,
 .project-back-button {
+  display: block;
   border: 1px solid #b8ef72;
   border-radius: 8px;
   background: transparent;
@@ -215,6 +191,7 @@ h1 {
   cursor: pointer;
   font-family: monospace;
   font-weight: 700;
+  text-decoration: none;
 }
 
 .project-button {
@@ -238,6 +215,7 @@ h1 {
 }
 
 .project-back-button {
+  display: inline-block;
   padding: 10px 14px;
 }
 
@@ -268,4 +246,62 @@ h1 {
   margin: 40px 0 0;
   color: #eeeae2;
   font-size: 16px;
+}
+
+.project-case-study {
+  display: grid;
+  gap: 32px;
+  margin-top: 48px;
+}
+
+.project-case-study section {
+  padding-top: 24px;
+  border-top: 1px solid #364032;
+}
+
+.project-case-study h2 {
+  margin: 0 0 12px;
+  color: #b8ef72;
+  font-family: monospace;
+  font-size: 16px;
+}
+
+.project-case-study p,
+.project-case-study li {
+  color: #aab3a7;
+  line-height: 1.7;
+}
+
+.project-case-study ul {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding-left: 20px;
+}
+
+@media (max-width: 700px) {
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    padding: 16px;
+    border-right: 0;
+    border-bottom: 1px solid #303630;
+  }
+
+  .sidebar-label {
+    display: none;
+  }
+
+  .sidebar nav {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 16px;
+    gap: 4px;
+  }
+
+  .sidebar nav a {
+    padding: 8px;
+  }
 }

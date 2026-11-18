@@ -1,45 +1,49 @@
-import {useState} from "react";
 import './App.css';
-import type {Page} from "./types/Page.ts";
-import Sidebar from './components/Sidebar';
 import Projects from './pages/Projects';
-
-
+import { Navigate, Route, Routes, useLocation } from 'react-router';
+import Sidebar from './components/Sidebar.tsx';
 
 function App() {
-  const [activePage, setActivePage] = useState<Page>("overview");
-  return (
-      <div className="workspace">
-        <Sidebar
-            activePage={activePage}
-            onPageChange={setActivePage}
-        />
-        <div className="workspace-body">
-          <header className="tab-bar">
-            <span className="active-tab">{activePage}.tsx</span>
-          </header>
+  const location = useLocation();
+  const tabName = location.pathname === '/'
+    ? 'overview'
+    : location.pathname.split('/').filter(Boolean).at(-1) ?? 'overview';
 
-          <main className="main-content">
-            {activePage === 'overview' && (
+  return (
+    <div className="workspace">
+      <Sidebar />
+
+      <div className="workspace-body">
+        <header className="tab-bar">
+          <span className="active-tab">{tabName}.tsx</span>
+        </header>
+
+        <main className="main-content">
+          <Routes>
+            <Route
+              path="/"
+              element={
                 <>
                   <p className="eyebrow">Hello, I’m Josiah</p>
-
                   <h1>
                     Thoughtful code.
                     <br />
                     Useful experiences.
                   </h1>
-
                   <p className="intro">
-                    I’m a software developer building applications with
-                    React, Vue, and Laravel.
+                    I’m a software developer building applications with React,
+                    Vue, and Laravel.
                   </p>
                 </>
-            )}
+              }
+            />
 
-            {activePage === 'projects' && <Projects />}
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/projects/:projectId" element={<Projects />} />
 
-            {activePage === 'experience' && (
+            <Route
+              path="/experience"
+              element={
                 <>
                   <p className="eyebrow">Learning through building</p>
                   <h1>My experience.</h1>
@@ -47,9 +51,12 @@ function App() {
                     My work and growth as a Software Developer Co-op at Vehikl.
                   </p>
                 </>
-            )}
+              }
+            />
 
-            {activePage === 'about' && (
+            <Route
+              path="/about"
+              element={
                 <>
                   <p className="eyebrow">Behind the code</p>
                   <h1>A little about me.</h1>
@@ -58,9 +65,12 @@ function App() {
                     ideas into useful applications.
                   </p>
                 </>
-            )}
+              }
+            />
 
-            {activePage === 'contact' && (
+            <Route
+              path="/contact"
+              element={
                 <>
                   <p className="eyebrow">Let’s connect</p>
                   <h1>Get in touch.</h1>
@@ -68,15 +78,19 @@ function App() {
                     Find me on GitHub and LinkedIn, or send me an email.
                   </p>
                 </>
-            )}
-          </main>
+              }
+            />
 
-          <footer className="status-bar">
-            <span>● Available to connect</span>
-            <span>Currently building SpendTempo</span>
-          </footer>
-        </div>
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+        </main>
+
+        <footer className="status-bar">
+          <span>● Available to connect</span>
+          <span>Currently building SpendTempo</span>
+        </footer>
       </div>
+    </div>
   );
 }
 

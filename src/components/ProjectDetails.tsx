@@ -1,16 +1,16 @@
 import type { Project } from '../types/Project.ts';
+import { Link } from 'react-router';
 
 type ProjectDetailsProps = {
     project: Project;
-    onBack: () => void;
 };
 
-export default function ProjectDetails({ project, onBack }: ProjectDetailsProps) {
+export default function ProjectDetails({ project }: ProjectDetailsProps) {
     return (
         <article className="project-details">
-            <button className="project-back-button" type="button" onClick={onBack}>
+            <Link className="project-back-button" to="/projects">
                 ← All projects
-            </button>
+            </Link>
 
             <div className="project-details-heading">
                 <p className="eyebrow">Project details</p>
@@ -26,6 +26,48 @@ export default function ProjectDetails({ project, onBack }: ProjectDetailsProps)
                     <li key={technology}>{technology}</li>
                 ))}
             </ul>
+            <div className="project-case-study">
+                <section>
+                    <h2>Problem</h2>
+                    <p>{project.problem}</p>
+                </section>
+
+                <section>
+                    <h2>Features</h2>
+                    <ul>
+                        {project.features.map((feature) => (
+                            <li key={feature}>{feature}</li>
+                        ))}
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Technical decisions</h2>
+                    <ul>
+                        {project.technicalDecisions.map((decision) => (
+                            <li key={decision}>{decision}</li>
+                        ))}
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Challenges</h2>
+                    <ul>
+                        {project.challenges.map((challenge) => (
+                            <li key={challenge}>{challenge}</li>
+                        ))}
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Lessons learned</h2>
+                    <ul>
+                        {project.lessons.map((lesson) => (
+                            <li key={lesson}>{lesson}</li>
+                        ))}
+                    </ul>
+                </section>
+            </div>
         </article>
     );
 }
