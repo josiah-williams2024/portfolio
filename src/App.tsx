@@ -3,6 +3,7 @@ import Projects from './pages/Projects';
 import { Navigate, Route, Routes, useLocation } from 'react-router';
 import Sidebar from './components/Sidebar.tsx';
 import { projects } from './data/projects.ts';
+import Overview from './pages/Overview.tsx';
 
 const pageTabNames: Record<string, string> = {
   '/': 'overview',
@@ -40,23 +41,7 @@ function App() {
 
         <main className="main-content">
           <Routes>
-            <Route
-              path="/"
-              element={
-                <>
-                  <p className="eyebrow">Hello, I’m Josiah</p>
-                  <h1>
-                    Thoughtful code.
-                    <br />
-                    Useful experiences.
-                  </h1>
-                  <p className="intro">
-                    I’m a software developer building applications with React,
-                    Vue, and Laravel.
-                  </p>
-                </>
-              }
-            />
+            <Route path="/" element={<Overview />} />
 
             <Route path="/projects" element={<Projects />} />
             <Route path="/projects/:projectId" element={<Projects />} />
