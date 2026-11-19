@@ -551,9 +551,16 @@ h1 {
   }
 
   .sidebar {
-    padding: 16px;
+    position: sticky;
+    z-index: 10;
+    top: 0;
+    padding: 12px 16px 14px;
     border-right: 0;
     border-bottom: 1px solid #303630;
+  }
+
+  .brand {
+    font-size: 26px;
   }
 
   .sidebar-label {
@@ -561,14 +568,87 @@ h1 {
   }
 
   .sidebar nav {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 16px;
-    gap: 4px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6px;
+    margin-top: 12px;
   }
 
   .sidebar nav a {
-    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 8px 6px;
+    text-align: center;
+  }
+
+  .tab-bar {
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .active-tab {
+    min-width: 0;
+    max-width: 100%;
+    padding: 12px 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .main-content {
+    padding: 32px 18px 48px;
+  }
+
+  h1 {
+    font-size: 36px;
+    line-height: 1.12;
+    overflow-wrap: anywhere;
+  }
+
+  .intro {
+    font-size: 17px;
+  }
+
+  .project-card {
+    padding: 22px;
+  }
+
+  .project-details {
+    padding: 22px;
+    border-radius: 12px;
+  }
+
+  .project-details-heading {
+    align-items: start;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 32px;
+  }
+
+  .project-details h1 {
+    overflow-wrap: anywhere;
+  }
+
+  .project-button,
+  .project-back-button,
+  .primary-link,
+  .secondary-link {
+    min-height: 44px;
+  }
+
+  .overview {
+    gap: 56px;
+  }
+
+  .overview-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .overview-actions a {
+    text-align: center;
   }
 
   .section-heading {
@@ -582,9 +662,16 @@ h1 {
 
   .contact-card {
     grid-template-columns: 1fr auto;
+    padding: 18px;
   }
 
   .contact-label {
     grid-column: 1 / -1;
+  }
+
+  .status-bar {
+    align-items: start;
+    flex-direction: column;
+    padding: 12px 18px;
   }
 }
