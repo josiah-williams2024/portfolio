@@ -1,5 +1,5 @@
 import type { Project } from '../types/Project.ts';
-import {Link} from 'react-router'
+import { Link } from 'react-router';
 
 type ProjectCardProps = {
     project: Project;

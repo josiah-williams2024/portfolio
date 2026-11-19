@@ -1,1 +1,0 @@
-export type Page = "overview" | "projects" | "experience" | "about" | "contact";
