@@ -416,7 +416,9 @@ h1 {
 .experience-page {
   display: grid;
   gap: 48px;
-  max-width: 900px;
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
 }
 
 .experience-entry {
@@ -472,7 +474,9 @@ h1 {
 .about-page {
   display: grid;
   gap: clamp(56px, 9vw, 100px);
-  max-width: 1000px;
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
 }
 
 .about-header {
@@ -532,7 +536,9 @@ h1 {
 .contact-page {
   display: grid;
   gap: clamp(48px, 8vw, 80px);
-  max-width: 1000px;
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
 }
 
 .contact-grid {
