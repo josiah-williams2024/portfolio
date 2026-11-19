@@ -131,9 +131,9 @@ function App() {
         </main>
 
         <footer className="status-bar">
-          <span>
-            <span aria-hidden="true">● </span>
-            Available to connect
+          <span className="availability-status">
+            <span aria-hidden="true">●</span>
+            Open to connecting
           </span>
           <span>Currently building SpendTempo</span>
         </footer>

@@ -123,6 +123,7 @@ h1 {
 
 .status-bar {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 12px;
@@ -131,6 +132,17 @@ h1 {
   color: #aab3a7;
   font-family: monospace;
   font-size: 12px;
+}
+
+.availability-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border: 1px solid #59793e;
+  border-radius: 999px;
+  background: #293028;
+  color: #b8ef72;
 }
 
 .project-grid {
