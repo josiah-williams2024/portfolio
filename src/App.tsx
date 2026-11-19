@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import './App.css';
 import Projects from './pages/Projects';
 import { Navigate, Route, Routes, useLocation } from 'react-router';
@@ -32,9 +33,24 @@ function getTabName(pathname: string) {
 function App() {
   const location = useLocation();
   const tabName = getTabName(location.pathname);
+  const mainContentRef = useRef<HTMLElement>(null);
+  const isInitialRoute = useRef(true);
+
+  useEffect(() => {
+    if (isInitialRoute.current) {
+      isInitialRoute.current = false;
+      return;
+    }
+
+    mainContentRef.current?.focus();
+  }, [location.pathname]);
 
   return (
     <div className="workspace">
+      <a className="skip-link" href="#main-content">
+        Skip to main content
+      </a>
+
       <Sidebar />
 
       <div className="workspace-body">
@@ -42,7 +58,12 @@ function App() {
           <span className="active-tab">{tabName}.tsx</span>
         </header>
 
-        <main className="main-content">
+        <main
+          className="main-content"
+          id="main-content"
+          ref={mainContentRef}
+          tabIndex={-1}
+        >
           <Routes>
             <Route path="/" element={<Overview />} />
 
@@ -60,7 +81,10 @@ function App() {
         </main>
 
         <footer className="status-bar">
-          <span>● Available to connect</span>
+          <span>
+            <span aria-hidden="true">● </span>
+            Available to connect
+          </span>
           <span>Currently building SpendTempo</span>
         </footer>
       </div>

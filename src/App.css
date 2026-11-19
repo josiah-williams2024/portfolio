@@ -4,6 +4,24 @@
   min-height: 100svh;
 }
 
+.skip-link {
+  position: fixed;
+  z-index: 100;
+  top: 12px;
+  left: 12px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: #b8ef72;
+  color: #151716;
+  font-weight: 700;
+  text-decoration: none;
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
 .sidebar {
   padding: 32px 24px;
   background: #1b1e1c;
@@ -79,6 +97,10 @@
   background-size: 24px 24px;
 }
 
+.main-content:focus {
+  outline: none;
+}
+
 .eyebrow {
   color: #b8ef72;
   font-family: monospace;
@@ -151,7 +173,8 @@ h1 {
   font-size: 11px;
 }
 
-.project-card h2 {
+.project-card h2,
+.project-card h3 {
   margin: 28px 0 12px;
   font-size: 22px;
   letter-spacing: -0.03em;

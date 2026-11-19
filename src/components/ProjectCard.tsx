@@ -3,9 +3,15 @@ import {Link} from 'react-router'
 
 type ProjectCardProps = {
     project: Project;
+    headingLevel?: 'h2' | 'h3';
 };
 
-export default function ProjectCard({ project }: ProjectCardProps) {
+export default function ProjectCard({
+    project,
+    headingLevel = 'h2',
+}: ProjectCardProps) {
+    const Heading = headingLevel;
+
     return (
         <article className="project-card">
             <div className="project-card-top">
@@ -14,7 +20,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                 <span className="project-status">{project.status}</span>
             </div>
 
-            <h2>{project.name}</h2>
+            <Heading>{project.name}</Heading>
             <p className="project-description">{project.description}</p>
 
             <ul className="project-technologies" aria-label="Technologies">

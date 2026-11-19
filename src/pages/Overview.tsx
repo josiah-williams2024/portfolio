@@ -74,7 +74,11 @@ export default function Overview() {
 
                 <div className="project-grid">
                     {featuredProjects.map((project) => (
-                        <ProjectCard key={project.id} project={project} />
+                        <ProjectCard
+                            key={project.id}
+                            project={project}
+                            headingLevel="h3"
+                        />
                     ))}
                 </div>
             </section>

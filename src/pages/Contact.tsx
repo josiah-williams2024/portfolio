@@ -39,10 +39,15 @@ export default function Contact() {
                         key={link.label}
                         target={link.external ? '_blank' : undefined}
                         rel={link.external ? 'noreferrer' : undefined}
+                        aria-label={`${link.label}: ${link.value}${
+                            link.external ? ' (opens in a new tab)' : ''
+                        }`}
                     >
                         <span className="contact-label">{link.label}</span>
                         <span className="contact-value">{link.value}</span>
-                        <span aria-hidden="true">↗</span>
+                        <span aria-hidden="true">
+                            {link.external ? '↗' : '→'}
+                        </span>
                     </a>
                 ))}
             </div>
