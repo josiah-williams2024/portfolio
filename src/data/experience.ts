@@ -2,7 +2,7 @@ import type { Experience } from '../types/Experience.ts';
 
 export const experience: Experience = {
     company: 'Vehikl',
-    role: 'Software Developer Co-op',
+    role: 'Software Developer',
     period: 'May 2026 - Present',
     summary:
         'Building and troubleshooting Laravel and Vue applications while collaborating with stakeholders and a four-person agile team.',

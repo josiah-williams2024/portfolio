@@ -43,9 +43,9 @@ export default function Overview() {
             >
                 <article className="overview-panel">
                     <p className="overview-panel-label">Experience</p>
-                    <h2>Software Developer Co-op</h2>
+                    <h2>Software Developer</h2>
                     <p>
-                        My work and growth as a Software Developer Co-op at Vehikl.
+                        My work and growth as a Software Developer at Vehikl.
                     </p>
                     <Link to="/experience">View my experience →</Link>
                 </article>
