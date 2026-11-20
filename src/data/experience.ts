@@ -10,7 +10,7 @@ export const experience: Experience = {
         'Developed Laravel API endpoints with request validation and activity logging to support new application features and troubleshooting.',
         'Investigated PostgreSQL queries and Laravel Nova timeouts using execution plans and index testing, identifying an invalid production index.',
         'Developed member status, absence, and field trip features for an internal planning application used daily by the team to track availability.',
-        'Built CodeSmellTrainer with Laravel and Vue.js to help new hires practise identifying code smells through interactive exercises, performance tracking, and leaderboards.',
+        'Built CodeSmellTrainer with Laravel and Vue.js to help new hires practice identifying code smells through interactive exercises, performance tracking, and leaderboards.',
         'Collaborated with client stakeholders to clarify requirements and deliver features through code reviews, testing, and mob programming.',
     ],
     technologies: [

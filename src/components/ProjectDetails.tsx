@@ -1,5 +1,6 @@
 import type { Project } from '../types/Project.ts';
 import { Link } from 'react-router';
+import CodeSmellPreview from './CodeSmellPreview.tsx';
 import ProjectGallery from './ProjectGallery.tsx';
 
 type ProjectDetailsProps = {
@@ -48,6 +49,8 @@ export default function ProjectDetails({ project }: ProjectDetailsProps) {
                     View source on GitHub
                 </a>
             )}
+
+            {project.id === 'code-smell-trainer' && <CodeSmellPreview />}
 
             {project.screenshots && project.screenshots.length > 0 && (
                 <ProjectGallery screenshots={project.screenshots} />

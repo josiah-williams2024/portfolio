@@ -36,7 +36,7 @@ export const projects: Project[] = [
         technologies: ['Laravel', 'Vue', 'TypeScript'],
         status: 'Built',
         problem:
-            'I wanted a way to practise spotting code smells in real snippets and get immediate feedback on why a piece of code might be hard to maintain.',
+            'I wanted a way to practice spotting code smells in real snippets and get immediate feedback on why a piece of code might be hard to maintain.',
         features: [
             'Play decks covering six code smells, including Long Method, Duplication, and Magic Numbers.',
             'Classify syntax-highlighted snippets using arrow keys or on-screen buttons, then read an explanation for each answer.',
@@ -114,7 +114,7 @@ export const projects: Project[] = [
         id: 'portfolio',
         name: 'Developer Workspace',
         description:
-            'This interactive portfolio, built to explore my projects and practise React.',
+            'This interactive portfolio, built to explore my projects and practice React.',
         preview: {
             src: '/project-media/developer-workspace-overview.png',
             alt: 'Developer Workspace portfolio overview with sidebar navigation, a dotted dark background, and green project links.',
