@@ -1,5 +1,6 @@
 import type { Project } from '../types/Project.ts';
 import { Link } from 'react-router';
+import ProjectGallery from './ProjectGallery.tsx';
 
 type ProjectDetailsProps = {
     project: Project;
@@ -46,6 +47,10 @@ export default function ProjectDetails({ project }: ProjectDetailsProps) {
                 >
                     View source on GitHub
                 </a>
+            )}
+
+            {project.screenshots && project.screenshots.length > 0 && (
+                <ProjectGallery screenshots={project.screenshots} />
             )}
 
             <div className="project-case-study">

@@ -1,3 +1,9 @@
+export type ProjectScreenshot = {
+    src: string;
+    alt: string;
+    caption: string;
+};
+
 export type Project = {
     id: string;
     name: string;
@@ -6,6 +12,7 @@ export type Project = {
         src: string;
         alt: string;
     };
+    screenshots?: ProjectScreenshot[];
     githubUrl?: string;
     technologies: string[];
     status: 'In progress' | 'Built';

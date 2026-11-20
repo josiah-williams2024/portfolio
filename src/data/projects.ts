@@ -10,6 +10,28 @@ export const projects: Project[] = [
             src: '/project-media/codesmelltrainer-gameplay.png',
             alt: 'CodeSmellTrainer dark-mode gameplay showing a PHP method to classify as short or long.',
         },
+        screenshots: [
+            {
+                src: '/project-media/codesmelltrainer-home.png',
+                alt: 'CodeSmellTrainer landing page with options to play the game or study code smells.',
+                caption: 'Landing page and learning paths',
+            },
+            {
+                src: '/project-media/codesmelltrainer-dashboard.png',
+                alt: 'CodeSmellTrainer dashboard with links to training, statistics, leaderboards, and study material.',
+                caption: 'Player dashboard',
+            },
+            {
+                src: '/project-media/codesmelltrainer-game.png',
+                alt: 'CodeSmellTrainer deck selection showing six code-smell practice topics.',
+                caption: 'Code-smell deck selection',
+            },
+            {
+                src: '/project-media/codesmelltrainer-score.png',
+                alt: 'CodeSmellTrainer gameplay with a syntax-highlighted PHP method, score, accuracy, and answer controls.',
+                caption: 'Live score and keyboard-friendly answers',
+            },
+        ],
         githubUrl: 'https://github.com/josiah-williams2024/CodeSmellTrainer',
         technologies: ['Laravel', 'Vue', 'TypeScript'],
         status: 'Built',
@@ -44,6 +66,28 @@ export const projects: Project[] = [
             src: '/project-media/spendtempo-dashboard.png',
             alt: 'SpendTempo dashboard showing a monthly budget calendar, daily limit, and spending averages.',
         },
+        screenshots: [
+            {
+                src: '/project-media/spendtempo-home.png',
+                alt: 'SpendTempo account page pairing a daily budget summary with a registration form.',
+                caption: 'Account creation and product introduction',
+            },
+            {
+                src: '/project-media/spendtempo-budget.jpg',
+                alt: 'SpendTempo monthly budget plan showing the daily limit, monthly pace, shortcuts, and category spending.',
+                caption: 'Monthly budget plan',
+            },
+            {
+                src: '/project-media/spendtempo-add-transaction.jpg',
+                alt: 'SpendTempo add-transaction form with expense and income options, amount, category, and note fields.',
+                caption: 'Expense and income entry',
+            },
+            {
+                src: '/project-media/spendtempo-categories.jpg',
+                alt: 'SpendTempo category manager listing colour-coded expense and income categories.',
+                caption: 'Custom spending categories',
+            },
+        ],
         githubUrl: 'https://github.com/josiah-williams2024/SpendTempo',
         technologies: ['React', 'TypeScript', 'Laravel'],
         status: 'In progress',

@@ -324,6 +324,52 @@ h1 {
   background: #293028;
 }
 
+.project-gallery {
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid #364032;
+}
+
+.project-gallery > h2 {
+  margin: 0;
+  color: #b8ef72;
+  font-family: monospace;
+}
+
+.project-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(100%, 280px), 1fr)
+  );
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.project-gallery figure {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid #364032;
+  border-radius: 10px;
+  background: #111411;
+}
+
+.project-gallery img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-bottom: 1px solid #364032;
+  object-fit: cover;
+  object-position: top;
+}
+
+.project-gallery figcaption {
+  padding: 12px 14px;
+  color: #aab3a7;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
 .project-case-study {
   display: grid;
   gap: 32px;
