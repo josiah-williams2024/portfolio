@@ -116,20 +116,22 @@ function App() {
           ref={mainContentRef}
           tabIndex={-1}
         >
-          <Routes>
-            <Route path="/" element={<Overview />} />
+          <div className="route-content" key={location.pathname}>
+            <Routes>
+              <Route path="/" element={<Overview />} />
 
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/projects/:projectId" element={<Projects />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/projects/:projectId" element={<Projects />} />
 
-            <Route path="/experience" element={<Experience />} />
+              <Route path="/experience" element={<Experience />} />
 
-            <Route path="/about" element={<About />} />
+              <Route path="/about" element={<About />} />
 
-            <Route path="/contact" element={<Contact />} />
+              <Route path="/contact" element={<Contact />} />
 
-            <Route path="*" element={<Navigate to="/" replace />} />
-          </Routes>
+              <Route path="*" element={<Navigate to="/" replace />} />
+            </Routes>
+          </div>
         </main>
 
         <footer className="status-bar">

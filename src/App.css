@@ -266,6 +266,41 @@
   background-size: 24px 24px;
 }
 
+.route-content {
+  animation: route-enter 220ms ease-out;
+}
+
+@keyframes route-enter {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sidebar nav a,
+.command-palette-trigger,
+.command-palette-header button,
+.command-palette-results button,
+.project-button,
+.project-back-button,
+.project-source-link,
+.primary-link,
+.secondary-link,
+.overview-panel a,
+.section-heading a,
+.contact-card {
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease,
+    transform 160ms ease;
+}
+
 .main-content:focus {
   outline: none;
 }
@@ -1376,6 +1411,22 @@ h1 {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .route-content {
+    animation: none;
+  }
+
+  .sidebar nav a,
+  .command-palette-trigger,
+  .command-palette-header button,
+  .command-palette-results button,
+  .project-button,
+  .project-back-button,
+  .project-source-link,
+  .primary-link,
+  .secondary-link,
+  .overview-panel a,
+  .section-heading a,
+  .contact-card,
   .code-smell-answers button,
   .code-smell-feedback button,
   .code-smell-results button {
