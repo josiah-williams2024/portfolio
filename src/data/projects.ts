@@ -6,6 +6,11 @@ export const projects: Project[] = [
         name: 'CodeSmellTrainer',
         description:
             'An interactive game for recognising code smells, with scores, stats, and leaderboards.',
+        preview: {
+            src: '/project-media/codesmelltrainer-gameplay.png',
+            alt: 'CodeSmellTrainer dark-mode gameplay showing a PHP method to classify as short or long.',
+        },
+        githubUrl: 'https://github.com/josiah-williams2024/CodeSmellTrainer',
         technologies: ['Laravel', 'Vue', 'TypeScript'],
         status: 'Built',
         problem:
@@ -35,6 +40,11 @@ export const projects: Project[] = [
         name: 'SpendTempo',
         description:
             'A calendar-based budget app for tracking income, expenses, and daily spending goals.',
+        preview: {
+            src: '/project-media/spendtempo-dashboard.png',
+            alt: 'SpendTempo dashboard showing a monthly budget calendar, daily limit, and spending averages.',
+        },
+        githubUrl: 'https://github.com/josiah-williams2024/SpendTempo',
         technologies: ['React', 'TypeScript', 'Laravel'],
         status: 'In progress',
         problem:
@@ -61,6 +71,11 @@ export const projects: Project[] = [
         name: 'Developer Workspace',
         description:
             'This interactive portfolio, built to explore my projects and practise React.',
+        preview: {
+            src: '/project-media/developer-workspace-overview.png',
+            alt: 'Developer Workspace portfolio overview with sidebar navigation, a dotted dark background, and green project links.',
+        },
+        githubUrl: 'https://github.com/josiah-williams2024/portfolio',
         technologies: ['React', 'TypeScript', 'CSS'],
         status: 'In progress',
         problem:

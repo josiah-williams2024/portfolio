@@ -162,6 +162,22 @@ h1 {
   background: #1b1e1c;
 }
 
+.project-preview,
+.project-details-preview {
+  display: block;
+  width: 100%;
+  border: 1px solid #364032;
+  border-radius: 10px;
+  background: #111411;
+  object-fit: cover;
+  object-position: top;
+}
+
+.project-preview {
+  aspect-ratio: 16 / 9;
+  margin-bottom: 24px;
+}
+
 .project-card-top {
   display: flex;
   align-items: center;
@@ -242,7 +258,9 @@ h1 {
 }
 
 .project-details {
+  width: 100%;
   max-width: 850px;
+  margin-inline: auto;
   padding: clamp(24px, 5vw, 56px);
   border: 1px solid #364032;
   border-radius: 16px;
@@ -277,10 +295,33 @@ h1 {
   line-height: 1.7;
 }
 
+.project-details-preview {
+  aspect-ratio: 16 / 9;
+  margin-top: 32px;
+}
+
 .project-details h2 {
   margin: 40px 0 0;
   color: #eeeae2;
   font-size: 16px;
+}
+
+.project-source-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin-top: 28px;
+  padding: 10px 14px;
+  border: 1px solid #b8ef72;
+  border-radius: 8px;
+  color: #b8ef72;
+  font-family: monospace;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.project-source-link:hover {
+  background: #293028;
 }
 
 .project-case-study {

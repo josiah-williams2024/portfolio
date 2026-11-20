@@ -14,6 +14,14 @@ export default function ProjectCard({
 
     return (
         <article className="project-card">
+            {project.preview && (
+                <img
+                    className="project-preview"
+                    src={project.preview.src}
+                    alt={project.preview.alt}
+                />
+            )}
+
             <div className="project-card-top">
                 <span className="project-label">Project</span>
 
