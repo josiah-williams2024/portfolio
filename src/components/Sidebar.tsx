@@ -1,12 +1,5 @@
 import { NavLink } from 'react-router';
-
-const navigationItems = [
-    { path: '/', label: 'Overview' },
-    { path: '/projects', label: 'Projects' },
-    { path: '/experience', label: 'Experience' },
-    { path: '/about', label: 'About' },
-    { path: '/contact', label: 'Contact' },
-];
+import { navigationItems } from '../data/navigation.ts';
 
 export default function Sidebar() {
     return (

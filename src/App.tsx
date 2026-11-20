@@ -8,6 +8,7 @@ import Overview from './pages/Overview.tsx';
 import Experience from './pages/Experience.tsx';
 import About from './pages/About.tsx';
 import Contact from './pages/Contact.tsx';
+import CommandPalette from './components/CommandPalette.tsx';
 
 type RouteDetails = {
   tabName: string;
@@ -106,6 +107,7 @@ function App() {
       <div className="workspace-body">
         <header className="tab-bar">
           <span className="active-tab">{tabName}.tsx</span>
+          <CommandPalette />
         </header>
 
         <main
